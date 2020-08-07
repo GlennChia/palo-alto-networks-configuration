@@ -1669,6 +1669,9 @@ This App-ID covers desktop App and web traffic for JANDI.</description>
                       <vulnerability>
                         <member>default</member>
                       </vulnerability>
+                      <url-filtering>
+                        <member>custom-filters</member>
+                      </url-filtering>
                     </profiles>
                   </profile-setting>
                   <to>
@@ -1822,6 +1825,52 @@ This App-ID covers desktop App and web traffic for JANDI.</description>
               </interface>
             </network>
           </import>
+          <profiles>
+            <custom-url-category>
+              <entry name="Whitelist Wildcards">
+                <list>
+                  <member>*.amazon.com</member>
+                  <member>*.azure.com</member>
+                  <member>*.google.com</member>
+                </list>
+                <type>URL List</type>
+              </entry>
+            </custom-url-category>
+            <url-filtering>
+              <entry name="custom-filters">
+                <credential-enforcement>
+                  <mode>
+                    <disabled/>
+                  </mode>
+                  <log-severity>medium</log-severity>
+                  <allow>
+                    <member>Whitelist Wildcards</member>
+                  </allow>
+                  <block>
+                    <member>abused-drugs</member>
+                    <member>adult</member>
+                    <member>business-and-economy</member>
+                    <member>command-and-control</member>
+                    <member>dating</member>
+                    <member>extremism</member>
+                    <member>gambling</member>
+                  </block>
+                </credential-enforcement>
+                <allow>
+                  <member>Whitelist Wildcards</member>
+                </allow>
+                <block>
+                  <member>abused-drugs</member>
+                  <member>adult</member>
+                  <member>business-and-economy</member>
+                  <member>command-and-control</member>
+                  <member>dating</member>
+                  <member>extremism</member>
+                  <member>gambling</member>
+                </block>
+              </entry>
+            </url-filtering>
+          </profiles>
         </entry>
       </vsys>
     </entry>

@@ -33,3 +33,7 @@ Explanation: Since the application instance sits in a private subnet and talks t
 # 2. Configuring syslog monitoring
 
 This link shows a step by step guide: [Configure Syslog Monitoring](https://docs.paloaltonetworks.com/pan-os/8-1/pan-os-admin/monitoring/use-syslog-for-monitoring/configure-syslog-monitoring)
+
+# 3. URL filtering
+
+Palo Alto provides a list of URLs that belong to each of the categories that are predefined. The link to these can be found at [Complete List of Pan-DB URL Filtering Categories](https://knowledgebase.paloaltonetworks.com/KCSArticleDetail?id=kA10g000000Cm5hCAC)
