@@ -44,3 +44,16 @@ When I tested, I could not block HTTPs downloads of .exe files. Hence for testin
 
 Sample URL to test executable downloads: http://s3.amazonaws.com/session-manager-downloads/plugin/latest/windows/SessionManagerPluginSetup.exe
 
+# 5. Data filtering
+
+This [link](https://knowledgebase.paloaltonetworks.com/KCSArticleDetail?id=kA10g000000PPJBCA4&refURL=http%3A%2F%2Fknowledgebase.paloaltonetworks.com%2FKCSArticleDetail) shows how to filter based on regex expressions, file contents and file properties.
+
+Here I configure file filtering based on credit card numbers and for word documents where the owner is "glenn"
+
+Steps
+
+1. Define the data patterns: Objects -> Custom Objects -> Data Patterns
+2. Use the data patterns in Data Filtering make sure to enable `Data Capture`. For the word document I configure both the `Alert Threshold` and `Block Threshold` to alert and block the moment we see a word document with the title "glenn". Here I also change the `Log Severity` level to `critical` for testing
+   ![](assets/02_data_filtering_data_capture.PNG)
+3. Add the Data Filtering profile to the policy's `Profile Setting`
+

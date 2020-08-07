@@ -1675,6 +1675,9 @@ This App-ID covers desktop App and web traffic for JANDI.</description>
                       <file-blocking>
                         <member>strict file blocking</member>
                       </file-blocking>
+                      <data-filtering>
+                        <member>custom-pattern</member>
+                      </data-filtering>
                     </profiles>
                   </profile-setting>
                   <to>
@@ -1873,6 +1876,68 @@ This App-ID covers desktop App and web traffic for JANDI.</description>
                 </block>
               </entry>
             </url-filtering>
+            <data-objects>
+              <entry name="ccn-pattern">
+                <pattern-type>
+                  <predefined>
+                    <pattern>
+                      <entry name="credit-card-numbers">
+                        <file-type>
+                          <member>any</member>
+                        </file-type>
+                      </entry>
+                    </pattern>
+                  </predefined>
+                </pattern-type>
+              </entry>
+              <entry name="file-properties">
+                <pattern-type>
+                  <file-properties>
+                    <pattern>
+                      <entry name="file-title">
+                        <file-type>docx</file-type>
+                        <file-property>panav-rsp-office-dlp-title</file-property>
+                        <property-value>glenn</property-value>
+                      </entry>
+                    </pattern>
+                  </file-properties>
+                </pattern-type>
+              </entry>
+            </data-objects>
+            <data-filtering>
+              <entry name="custom-pattern">
+                <rules>
+                  <entry name="rule0">
+                    <application>
+                      <member>any</member>
+                    </application>
+                    <file-type>
+                      <member>any</member>
+                    </file-type>
+                    <direction>both</direction>
+                    <alert-threshold>0</alert-threshold>
+                    <block-threshold>0</block-threshold>
+                    <data-object>ccn-pattern</data-object>
+                    <log-severity>informational</log-severity>
+                  </entry>
+                  <entry name="rule1">
+                    <application>
+                      <member>any</member>
+                    </application>
+                    <file-type>
+                      <member>docx</member>
+                      <member>doc</member>
+                    </file-type>
+                    <direction>both</direction>
+                    <alert-threshold>1</alert-threshold>
+                    <block-threshold>1</block-threshold>
+                    <data-object>file-properties</data-object>
+                    <log-severity>critical</log-severity>
+                  </entry>
+                </rules>
+                <data-capture>yes</data-capture>
+              </entry>
+            </data-filtering>
           </profiles>
         </entry>
       </vsys>
