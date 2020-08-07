@@ -1586,7 +1586,7 @@ This App-ID covers desktop App and web traffic for JANDI.</description>
                     <member>untrust</member>
                   </from>
                   <source>
-                    <member>any</member>
+                    <member>allowManagementIp</member>
                   </source>
                   <destination>
                     <member>any</member>
@@ -1699,6 +1699,37 @@ This App-ID covers desktop App and web traffic for JANDI.</description>
                     <member>any</member>
                   </hip-profiles>
                   <action>allow</action>
+                  <log-setting>Traffic</log-setting>
+                </entry>
+                <entry name="DenyManagement" uuid="d3a86c55-8312-47cb-bef6-b9c0300a98c0">
+                  <to>
+                    <member>trust</member>
+                  </to>
+                  <from>
+                    <member>untrust</member>
+                  </from>
+                  <source>
+                    <member>denyManagementIp</member>
+                  </source>
+                  <destination>
+                    <member>any</member>
+                  </destination>
+                  <source-user>
+                    <member>any</member>
+                  </source-user>
+                  <category>
+                    <member>any</member>
+                  </category>
+                  <application>
+                    <member>any</member>
+                  </application>
+                  <service>
+                    <member>application-default</member>
+                  </service>
+                  <hip-profiles>
+                    <member>any</member>
+                  </hip-profiles>
+                  <action>deny</action>
                   <log-setting>Traffic</log-setting>
                 </entry>
               </rules>
