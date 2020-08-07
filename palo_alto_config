@@ -1609,7 +1609,7 @@ This App-ID covers desktop App and web traffic for JANDI.</description>
                   </hip-profiles>
                   <action>allow</action>
                   <negate-source>no</negate-source>
-                  <log-setting>Traffic</log-setting>
+                  <log-setting>All</log-setting>
                 </entry>
                 <entry name="AllowWebAccess" uuid="9df5b37f-b15a-4112-9a2b-ad0b79ec0bb8">
                   <profile-setting>
@@ -1655,7 +1655,7 @@ This App-ID covers desktop App and web traffic for JANDI.</description>
                   <action>allow</action>
                   <log-start>no</log-start>
                   <log-end>yes</log-end>
-                  <log-setting>Traffic</log-setting>
+                  <log-setting>All</log-setting>
                 </entry>
                 <entry name="webserver2External" uuid="ae4f3c9a-3507-41a8-a5ed-1d5000e2c4aa">
                   <profile-setting>
@@ -1699,9 +1699,9 @@ This App-ID covers desktop App and web traffic for JANDI.</description>
                     <member>any</member>
                   </hip-profiles>
                   <action>allow</action>
-                  <log-setting>Traffic</log-setting>
+                  <log-setting>All</log-setting>
                 </entry>
-                <entry name="DenyManagement" uuid="d3a86c55-8312-47cb-bef6-b9c0300a98c0">
+                <entry name="DenyManagement" uuid="45fbab1a-3480-423e-9831-07d159869bd2">
                   <to>
                     <member>trust</member>
                   </to>
@@ -1730,7 +1730,7 @@ This App-ID covers desktop App and web traffic for JANDI.</description>
                     <member>any</member>
                   </hip-profiles>
                   <action>deny</action>
-                  <log-setting>Traffic</log-setting>
+                  <log-setting>All</log-setting>
                 </entry>
               </rules>
             </security>
@@ -1745,20 +1745,68 @@ This App-ID covers desktop App and web traffic for JANDI.</description>
                   <action>deny</action>
                   <log-start>no</log-start>
                   <log-end>yes</log-end>
-                  <log-setting>Traffic</log-setting>
+                  <log-setting>All</log-setting>
                 </entry>
               </rules>
             </default-security-rules>
           </rulebase>
           <log-settings>
             <profiles>
-              <entry name="Traffic">
+              <entry name="All">
                 <match-list>
                   <entry name="Traffic">
                     <send-syslog>
                       <member>sysLogIp</member>
                     </send-syslog>
                     <log-type>traffic</log-type>
+                    <filter>All Logs</filter>
+                    <send-to-panorama>no</send-to-panorama>
+                  </entry>
+                  <entry name="Threat">
+                    <send-syslog>
+                      <member>sysLogIp</member>
+                    </send-syslog>
+                    <log-type>threat</log-type>
+                    <filter>All Logs</filter>
+                    <send-to-panorama>no</send-to-panorama>
+                  </entry>
+                  <entry name="Url">
+                    <send-syslog>
+                      <member>sysLogIp</member>
+                    </send-syslog>
+                    <log-type>url</log-type>
+                    <filter>All Logs</filter>
+                    <send-to-panorama>no</send-to-panorama>
+                  </entry>
+                  <entry name="Auth">
+                    <send-syslog>
+                      <member>sysLogIp</member>
+                    </send-syslog>
+                    <log-type>auth</log-type>
+                    <filter>All Logs</filter>
+                    <send-to-panorama>no</send-to-panorama>
+                  </entry>
+                  <entry name="Wildfire">
+                    <send-syslog>
+                      <member>sysLogIp</member>
+                    </send-syslog>
+                    <log-type>wildfire</log-type>
+                    <filter>All Logs</filter>
+                    <send-to-panorama>no</send-to-panorama>
+                  </entry>
+                  <entry name="Data">
+                    <send-syslog>
+                      <member>sysLogIp</member>
+                    </send-syslog>
+                    <log-type>data</log-type>
+                    <filter>All Logs</filter>
+                    <send-to-panorama>no</send-to-panorama>
+                  </entry>
+                  <entry name="Tunnel">
+                    <send-syslog>
+                      <member>sysLogIp</member>
+                    </send-syslog>
+                    <log-type>tunnel</log-type>
                     <filter>All Logs</filter>
                     <send-to-panorama>no</send-to-panorama>
                   </entry>
