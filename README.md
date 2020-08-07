@@ -4,6 +4,8 @@ For the uploaded configuration I've `REDACTED`the `phash` and `public-key`
 
 # 1. Base configuration according to tutorial
 
+## 1.1 Tutorial details
+
 This is the link I followed, titled [Launch the VM-Series Firewall on AWS](https://docs.paloaltonetworks.com/vm-series/9-1/vm-series-deployment/set-up-the-vm-series-firewall-on-aws/deploy-the-vm-series-firewall-on-aws/launch-the-vm-series-firewall-on-aws.html#ide07b93a2-ccb3-4c69-95fe-96e3328b8514)
 
 Some details about my configuration
@@ -22,3 +24,8 @@ Some details about my configuration
 | eth2 trust                                               | 10.0.1.1                                       |
 | Private web server                                       | 10.0.1.88                                      |
 
+## 1.2 Fixing the base configuration
+
+Explanation: Since the application instance sits in a private subnet and talks to eth1 through eth2, we need to specify a source translation from eth1 to eth2. Subsequently, the destination translation to hit the web server will work
+
+![](assets/01_source_translation.PNG)

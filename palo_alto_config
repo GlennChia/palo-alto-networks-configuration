@@ -1518,6 +1518,13 @@ This App-ID covers desktop App and web traffic for JANDI.</description>
                   <destination-translation>
                     <translated-address>10.0.1.88</translated-address>
                   </destination-translation>
+                  <source-translation>
+                    <dynamic-ip>
+                      <translated-address>
+                        <member>10.0.1.10</member>
+                      </translated-address>
+                    </dynamic-ip>
+                  </source-translation>
                 </entry>
                 <entry name="NAT2External" uuid="e5308475-0dba-458b-8129-080c73ff22f9">
                   <source-translation>
