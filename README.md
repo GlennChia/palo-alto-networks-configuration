@@ -1,6 +1,6 @@
 # palo-alto-networks-configuration
 
-For the uploaded configuration I've `REDACTED`the `phash` and `public-key`
+For the uploaded configuration I've `REDACTED`the `phash`, `public-key`. I've added a utility.sh file that makes replacing them easier
 
 # 1. Base configuration according to tutorial
 
@@ -29,3 +29,7 @@ Some details about my configuration
 Explanation: Since the application instance sits in a private subnet and talks to eth1 through eth2, we need to specify a source translation from eth1 to eth2. Subsequently, the destination translation to hit the web server will work
 
 ![](assets/01_source_translation.PNG)
+
+# 2. Configuring syslog monitoring
+
+This link shows a step by step guide: [Configure Syslog Monitoring](https://docs.paloaltonetworks.com/pan-os/8-1/pan-os-admin/monitoring/use-syslog-for-monitoring/configure-syslog-monitoring)

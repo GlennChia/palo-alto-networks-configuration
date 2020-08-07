@@ -3,13 +3,13 @@
   <mgt-config>
     <users>
       <entry name="admin">
-        <phash>REDACTED</phash>
+        <phash>phashReplace</phash>
         <permissions>
           <role-based>
             <superuser>yes</superuser>
           </role-based>
         </permissions>
-        <public-key>REDACTED</public-key>
+        <public-key>publicKeyReplace</public-key>
       </entry>
     </users>
     <password-complexity>
@@ -1470,7 +1470,7 @@ This App-ID covers desktop App and web traffic for JANDI.</description>
                   <accept-dhcp-domain>no</accept-dhcp-domain>
                 </dhcp-client>
               </type>
-              <public-key>REDACTED</public-key>
+              <public-key>publicKeyReplace</public-key>
             </initcfg>
           </management>
         </setting>
