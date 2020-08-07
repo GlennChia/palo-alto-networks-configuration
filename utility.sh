@@ -18,6 +18,8 @@ read_var() {
 
 phashReplace=$(read_var phashReplace)
 publicKeyReplace=$(read_var publicKeyReplace)
+sysLogIp=$(read_var sysLogIp)
 
 sed -i "s/phashReplace/${phashReplace}/" palo_alto_config
 sed -i "s/publicKeyReplace/${publicKeyReplace}/" palo_alto_config
+sed -i "s/sysLogIp/${sysLogIp}/" palo_alto_config

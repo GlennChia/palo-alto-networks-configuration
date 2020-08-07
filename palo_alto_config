@@ -74,12 +74,38 @@
       </report>
     </botnet>
     <log-settings>
-      <syslog/>
+      <syslog>
+        <entry name="sysLogIp">
+          <server>
+            <entry name="sysLogIp">
+              <transport>UDP</transport>
+              <port>514</port>
+              <format>BSD</format>
+              <server>sysLogIp</server>
+              <facility>LOG_USER</facility>
+            </entry>
+          </server>
+        </entry>
+      </syslog>
       <system>
-        <match-list/>
+        <match-list>
+          <entry name="sysLogIp">
+            <send-syslog>
+              <member>sysLogIp</member>
+            </send-syslog>
+            <filter>All Logs</filter>
+          </entry>
+        </match-list>
       </system>
       <config>
-        <match-list/>
+        <match-list>
+          <entry name="sysLogIp">
+            <send-syslog>
+              <member>sysLogIp</member>
+            </send-syslog>
+            <filter>All Logs</filter>
+          </entry>
+        </match-list>
       </config>
     </log-settings>
     <content-preview>

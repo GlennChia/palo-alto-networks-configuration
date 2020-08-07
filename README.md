@@ -1,6 +1,6 @@
 # palo-alto-networks-configuration
 
-For the uploaded configuration I've `REDACTED`the `phash`, `public-key`. I've added a utility.sh file that makes replacing them easier
+For the uploaded configuration I've `REDACTED`the `phash`, `public-key` and `sysLogIp`. I've added a utility.sh file makes replacing them easier
 
 # 1. Base configuration according to tutorial
 
