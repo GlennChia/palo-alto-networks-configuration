@@ -1499,6 +1499,10 @@ This App-ID covers desktop App and web traffic for JANDI.</description>
               <public-key>publicKeyReplace</public-key>
             </initcfg>
           </management>
+          <wildfire>
+            <report-benign-file>yes</report-benign-file>
+            <report-grayware-file>yes</report-grayware-file>
+          </wildfire>
         </setting>
       </deviceconfig>
       <vsys>
@@ -1678,6 +1682,9 @@ This App-ID covers desktop App and web traffic for JANDI.</description>
                       <data-filtering>
                         <member>custom-pattern</member>
                       </data-filtering>
+                      <wildfire-analysis>
+                        <member>default</member>
+                      </wildfire-analysis>
                     </profiles>
                   </profile-setting>
                   <to>
@@ -1939,6 +1946,11 @@ This App-ID covers desktop App and web traffic for JANDI.</description>
               </entry>
             </data-filtering>
           </profiles>
+          <setting>
+            <ssl-decrypt>
+              <allow-forward-decrypted-content>yes</allow-forward-decrypted-content>
+            </ssl-decrypt>
+          </setting>
         </entry>
       </vsys>
     </entry>

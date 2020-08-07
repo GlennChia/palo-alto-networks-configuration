@@ -57,3 +57,22 @@ Steps
    ![](assets/02_data_filtering_data_capture.PNG)
 3. Add the Data Filtering profile to the policy's `Profile Setting`
 
+# 5. WildFire Analysis
+
+Steps
+
+1. Allow forwarding of decrypted content
+   ![](assets/03_allow_forwarding_decrypted_content.PNG)
+2. Then enable WildFire logs to log benign files and graywire files. Take note of the file size limits. This can be adjusted.
+   ![](assets/04_wildfire_general_settings.PNG)
+3. The default WildFire security profile takes in any file type (Of course within the supported file types such as pdf and pe)
+4. Attach this security profile to the security policy
+
+These are some safe sample links to test wildfire with (Note that if there is a file blocking policy in place, then it won't be sent to WildFire)
+
+- Link to test .exe files: http://wildfire.paloaltonetworks.com/publicapi/test/pe
+- Link to test .pdf files: https://d1.awsstatic.com/architecture-diagrams/ArchitectureDiagrams/cerner-healthedatalab-overview-ra.pdf?did=wp_card&trk=wp_card
+
+Example result
+
+![](assets/05_wildfire_test.PNG)
