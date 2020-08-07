@@ -1,0 +1,1700 @@
+<?xml version="1.0"?>
+<config version="9.1.0" urldb="paloaltonetworks">
+  <mgt-config>
+    <users>
+      <entry name="admin">
+        <phash>REDACTED</phash>
+        <permissions>
+          <role-based>
+            <superuser>yes</superuser>
+          </role-based>
+        </permissions>
+        <public-key>REDACTED</public-key>
+      </entry>
+    </users>
+    <password-complexity>
+      <enabled>yes</enabled>
+      <minimum-length>8</minimum-length>
+    </password-complexity>
+  </mgt-config>
+  <shared>
+    <application/>
+    <application-group/>
+    <service/>
+    <service-group/>
+    <botnet>
+      <configuration>
+        <http>
+          <dynamic-dns>
+            <enabled>yes</enabled>
+            <threshold>5</threshold>
+          </dynamic-dns>
+          <malware-sites>
+            <enabled>yes</enabled>
+            <threshold>5</threshold>
+          </malware-sites>
+          <recent-domains>
+            <enabled>yes</enabled>
+            <threshold>5</threshold>
+          </recent-domains>
+          <ip-domains>
+            <enabled>yes</enabled>
+            <threshold>10</threshold>
+          </ip-domains>
+          <executables-from-unknown-sites>
+            <enabled>yes</enabled>
+            <threshold>5</threshold>
+          </executables-from-unknown-sites>
+        </http>
+        <other-applications>
+          <irc>yes</irc>
+        </other-applications>
+        <unknown-applications>
+          <unknown-tcp>
+            <destinations-per-hour>10</destinations-per-hour>
+            <sessions-per-hour>10</sessions-per-hour>
+            <session-length>
+              <maximum-bytes>100</maximum-bytes>
+              <minimum-bytes>50</minimum-bytes>
+            </session-length>
+          </unknown-tcp>
+          <unknown-udp>
+            <destinations-per-hour>10</destinations-per-hour>
+            <sessions-per-hour>10</sessions-per-hour>
+            <session-length>
+              <maximum-bytes>100</maximum-bytes>
+              <minimum-bytes>50</minimum-bytes>
+            </session-length>
+          </unknown-udp>
+        </unknown-applications>
+      </configuration>
+      <report>
+        <topn>100</topn>
+        <scheduled>yes</scheduled>
+      </report>
+    </botnet>
+    <log-settings>
+      <syslog/>
+      <system>
+        <match-list/>
+      </system>
+      <config>
+        <match-list/>
+      </config>
+    </log-settings>
+    <content-preview>
+      <application>
+        <entry id="10413" minver="7.1.0" name="aeroadmin" ori_country="USA" ori_language="English">
+          <category>networking</category>
+          <subcategory>remote-access</subcategory>
+          <technology>client-server</technology>
+          <description>AeroAdmin is a Remote Desktop software. It is ready for use right after downloading and connects computers in different local area networks, behind NAT. This App-ID covers authentication and connection session of AeroAdmin.</description>
+          <appident>yes</appident>
+          <evasive-behavior>no</evasive-behavior>
+          <consume-big-bandwidth>no</consume-big-bandwidth>
+          <used-by-malware>no</used-by-malware>
+          <able-to-transfer-file>yes</able-to-transfer-file>
+          <has-known-vulnerability>yes</has-known-vulnerability>
+          <tunnel-other-application>no</tunnel-other-application>
+          <prone-to-misuse>no</prone-to-misuse>
+          <pervasive-use>no</pervasive-use>
+          <per-direction-regex>no</per-direction-regex>
+          <deny-action>drop-reset</deny-action>
+          <cachable>no</cachable>
+          <new-appid>yes</new-appid>
+          <references>
+            <entry name="AeroAdmin">
+              <link>https://www.aeroadmin.com/</link>
+            </entry>
+          </references>
+          <default>
+            <port>
+              <member>tcp/443,8080,5665</member>
+            </port>
+          </default>
+          <risk>2</risk>
+          <preview>yes</preview>
+        </entry>
+        <entry id="10421" minver="7.1.0" name="cerner-device-connectivity" ori_country="USA" ori_language="English">
+          <category>business-systems</category>
+          <subcategory>medical</subcategory>
+          <technology>client-server</technology>
+          <description>This App-ID is for Cerner and compatible Device Connectivity solutions that enable interoperability between medical devices, healthcare applications and the EHR. This App helps Automate the collection of vital signs and other medical device results.</description>
+          <appident>yes</appident>
+          <evasive-behavior>no</evasive-behavior>
+          <consume-big-bandwidth>no</consume-big-bandwidth>
+          <used-by-malware>no</used-by-malware>
+          <able-to-transfer-file>no</able-to-transfer-file>
+          <has-known-vulnerability>no</has-known-vulnerability>
+          <tunnel-other-application>no</tunnel-other-application>
+          <prone-to-misuse>no</prone-to-misuse>
+          <pervasive-use>no</pervasive-use>
+          <per-direction-regex>no</per-direction-regex>
+          <deny-action>drop-reset</deny-action>
+          <cachable>no</cachable>
+          <new-appid>yes</new-appid>
+          <references>
+            <entry name="Cerner">
+              <link>https://www.cerner.com/solutions/device-connectivity</link>
+            </entry>
+          </references>
+          <default>
+            <port>
+              <member>tcp/dynamic</member>
+            </port>
+          </default>
+          <risk>1</risk>
+          <preview>yes</preview>
+        </entry>
+        <entry id="10231" minver="7.1.0" name="cip-ethernet-ip-disable-io" ori_country="USA" ori_language="English">
+          <category>business-systems</category>
+          <subcategory>ics-protocols</subcategory>
+          <technology>client-server</technology>
+          <description>This App-ID provides operate functional control over EtherNet/IP. EtherNet/IP was introduced in 2001 and today is the most developed, proven and complete industrial Ethernet network solution available for manufacturing automation. EtherNet/IP is a member of a family of networks that implements the Common Industrial Protocol (CIP) at its upper layers. CIP encompasses a comprehensive suite of messages and services for a variety of manufacturing automation applications, including control, safety, synchronization, motion, configuration and information. As a truly media-independent protocol that is supported by hundreds of vendors around the world, CIP provides users with a unified communication architecture throughout the manufacturing enterprise. This protocol is typically used in Supervisory Control and Data Acquisition (SCADA) and Industrial Control System (ICS) applications. This App-ID detects Disable I/O command for CIP.</description>
+          <alg>yes</alg>
+          <appident>yes</appident>
+          <vulnerability-ident>yes</vulnerability-ident>
+          <evasive-behavior>no</evasive-behavior>
+          <consume-big-bandwidth>no</consume-big-bandwidth>
+          <used-by-malware>no</used-by-malware>
+          <able-to-transfer-file>no</able-to-transfer-file>
+          <has-known-vulnerability>yes</has-known-vulnerability>
+          <tunnel-other-application>no</tunnel-other-application>
+          <prone-to-misuse>no</prone-to-misuse>
+          <pervasive-use>no</pervasive-use>
+          <per-direction-regex>no</per-direction-regex>
+          <decode>cip-ethernet-ip</decode>
+          <deny-action>drop-reset</deny-action>
+          <cachable>no</cachable>
+          <can-disable>yes</can-disable>
+          <new-appid>yes</new-appid>
+          <parent-app>cip-ethernet-ip-read-mod-write</parent-app>
+          <references>
+            <entry name="ODVA">
+              <link>http://www.odva.org/Home/ODVATECHNOLOGIES/EtherNetIP/tabid/67/lng/en-US/Default.aspx</link>
+            </entry>
+            <entry name="Wikipedia">
+              <link>http://en.wikipedia.org/wiki/EtherNet/IP</link>
+            </entry>
+          </references>
+          <default>
+            <port>
+              <member>tcp/44818</member>
+            </port>
+          </default>
+          <tunnel-applications minver="3.1.0">
+            <member minver="3.1.0">ctd-dummy</member>
+          </tunnel-applications>
+          <applicable-decoders>
+            <member>cip-ethernet-ip</member>
+          </applicable-decoders>
+          <risk>1</risk>
+          <preview>yes</preview>
+        </entry>
+        <entry id="10232" minver="7.1.0" name="cip-ethernet-ip-disable-sfc" ori_country="USA" ori_language="English">
+          <category>business-systems</category>
+          <subcategory>ics-protocols</subcategory>
+          <technology>client-server</technology>
+          <description>This App-ID provides operate functional control over EtherNet/IP. EtherNet/IP was introduced in 2001 and today is the most developed, proven and complete industrial Ethernet network solution available for manufacturing automation. EtherNet/IP is a member of a family of networks that implements the Common Industrial Protocol (CIP) at its upper layers. CIP encompasses a comprehensive suite of messages and services for a variety of manufacturing automation applications, including control, safety, synchronization, motion, configuration and information. As a truly media-independent protocol that is supported by hundreds of vendors around the world, CIP provides users with a unified communication architecture throughout the manufacturing enterprise. This protocol is typically used in Supervisory Control and Data Acquisition (SCADA) and Industrial Control System (ICS) applications. This App-ID detects disable SFC command for CIP.</description>
+          <alg>yes</alg>
+          <appident>yes</appident>
+          <vulnerability-ident>yes</vulnerability-ident>
+          <evasive-behavior>no</evasive-behavior>
+          <consume-big-bandwidth>no</consume-big-bandwidth>
+          <used-by-malware>no</used-by-malware>
+          <able-to-transfer-file>no</able-to-transfer-file>
+          <has-known-vulnerability>no</has-known-vulnerability>
+          <tunnel-other-application>no</tunnel-other-application>
+          <prone-to-misuse>no</prone-to-misuse>
+          <pervasive-use>no</pervasive-use>
+          <per-direction-regex>no</per-direction-regex>
+          <decode>cip-ethernet-ip</decode>
+          <deny-action>drop-reset</deny-action>
+          <cachable>no</cachable>
+          <can-disable>yes</can-disable>
+          <new-appid>yes</new-appid>
+          <parent-app>cip-ethernet-ip-read-mod-write</parent-app>
+          <references>
+            <entry name="ODVA">
+              <link>http://www.odva.org/Home/ODVATECHNOLOGIES/EtherNetIP/tabid/67/lng/en-US/Default.aspx</link>
+            </entry>
+            <entry name="Wikipedia">
+              <link>http://en.wikipedia.org/wiki/EtherNet/IP</link>
+            </entry>
+          </references>
+          <default>
+            <port>
+              <member>tcp/44818</member>
+            </port>
+          </default>
+          <use-applications minver="3.1.0">
+            <member minver="3.1.0">cip-ethernet-ip-base</member>
+          </use-applications>
+          <tunnel-applications minver="3.1.0">
+            <member minver="3.1.0">ctd-dummy</member>
+          </tunnel-applications>
+          <applicable-decoders>
+            <member>cip-ethernet-ip</member>
+          </applicable-decoders>
+          <risk>1</risk>
+          <preview>yes</preview>
+        </entry>
+        <entry id="10233" minver="7.1.0" name="cip-ethernet-ip-enable-io" ori_country="USA" ori_language="English">
+          <category>business-systems</category>
+          <subcategory>ics-protocols</subcategory>
+          <technology>client-server</technology>
+          <description>This App-ID provides operate functional control over EtherNet/IP. EtherNet/IP was introduced in 2001 and today is the most developed, proven and complete industrial Ethernet network solution available for manufacturing automation. EtherNet/IP is a member of a family of networks that implements the Common Industrial Protocol (CIP) at its upper layers. CIP encompasses a comprehensive suite of messages and services for a variety of manufacturing automation applications, including control, safety, synchronization, motion, configuration and information. As a truly media-independent protocol that is supported by hundreds of vendors around the world, CIP provides users with a unified communication architecture throughout the manufacturing enterprise. This protocol is typically used in Supervisory Control and Data Acquisition (SCADA) and Industrial Control System (ICS) applications. This App-ID detects enable I/O command for CIP.</description>
+          <alg>yes</alg>
+          <appident>yes</appident>
+          <vulnerability-ident>yes</vulnerability-ident>
+          <evasive-behavior>no</evasive-behavior>
+          <consume-big-bandwidth>no</consume-big-bandwidth>
+          <used-by-malware>no</used-by-malware>
+          <able-to-transfer-file>no</able-to-transfer-file>
+          <has-known-vulnerability>yes</has-known-vulnerability>
+          <tunnel-other-application>no</tunnel-other-application>
+          <prone-to-misuse>no</prone-to-misuse>
+          <pervasive-use>no</pervasive-use>
+          <per-direction-regex>no</per-direction-regex>
+          <decode>cip-ethernet-ip</decode>
+          <deny-action>drop-reset</deny-action>
+          <cachable>no</cachable>
+          <can-disable>yes</can-disable>
+          <new-appid>yes</new-appid>
+          <parent-app>cip-ethernet-ip-write-tag</parent-app>
+          <references>
+            <entry name="ODVA">
+              <link>http://www.odva.org/Home/ODVATECHNOLOGIES/EtherNetIP/tabid/67/lng/en-US/Default.aspx</link>
+            </entry>
+            <entry name="Wikipedia">
+              <link>http://en.wikipedia.org/wiki/EtherNet/IP</link>
+            </entry>
+          </references>
+          <default>
+            <port>
+              <member>tcp/44818</member>
+            </port>
+          </default>
+          <use-applications minver="3.1.0">
+            <member minver="3.1.0">cip-ethernet-ip-base</member>
+          </use-applications>
+          <tunnel-applications minver="3.1.0">
+            <member minver="3.1.0">ctd-dummy</member>
+          </tunnel-applications>
+          <applicable-decoders>
+            <member>cip-ethernet-ip</member>
+          </applicable-decoders>
+          <risk>1</risk>
+          <preview>yes</preview>
+        </entry>
+        <entry id="10234" minver="7.1.0" name="cip-ethernet-ip-enable-sfc" ori_country="USA" ori_language="English">
+          <category>business-systems</category>
+          <subcategory>ics-protocols</subcategory>
+          <technology>client-server</technology>
+          <description>This App-ID provides operate functional control over EtherNet/IP. EtherNet/IP was introduced in 2001 and today is the most developed, proven and complete industrial Ethernet network solution available for manufacturing automation. EtherNet/IP is a member of a family of networks that implements the Common Industrial Protocol (CIP) at its upper layers. CIP encompasses a comprehensive suite of messages and services for a variety of manufacturing automation applications, including control, safety, synchronization, motion, configuration and information. As a truly media-independent protocol that is supported by hundreds of vendors around the world, CIP provides users with a unified communication architecture throughout the manufacturing enterprise. This protocol is typically used in Supervisory Control and Data Acquisition (SCADA) and Industrial Control System (ICS) applications. This App-ID detects Enable SFC command for CIP.</description>
+          <alg>yes</alg>
+          <appident>yes</appident>
+          <vulnerability-ident>yes</vulnerability-ident>
+          <evasive-behavior>no</evasive-behavior>
+          <consume-big-bandwidth>no</consume-big-bandwidth>
+          <used-by-malware>no</used-by-malware>
+          <able-to-transfer-file>no</able-to-transfer-file>
+          <has-known-vulnerability>yes</has-known-vulnerability>
+          <tunnel-other-application>no</tunnel-other-application>
+          <prone-to-misuse>no</prone-to-misuse>
+          <pervasive-use>no</pervasive-use>
+          <per-direction-regex>no</per-direction-regex>
+          <decode>cip-ethernet-ip</decode>
+          <deny-action>drop-reset</deny-action>
+          <cachable>no</cachable>
+          <can-disable>yes</can-disable>
+          <new-appid>yes</new-appid>
+          <parent-app>cip-ethernet-ip-write-tag</parent-app>
+          <references>
+            <entry name="ODVA">
+              <link>http://www.odva.org/Home/ODVATECHNOLOGIES/EtherNetIP/tabid/67/lng/en-US/Default.aspx</link>
+            </entry>
+            <entry name="Wikipedia">
+              <link>http://en.wikipedia.org/wiki/EtherNet/IP</link>
+            </entry>
+          </references>
+          <default>
+            <port>
+              <member>tcp/44818</member>
+            </port>
+          </default>
+          <use-applications minver="3.1.0">
+            <member minver="3.1.0">cip-ethernet-ip-base</member>
+          </use-applications>
+          <tunnel-applications minver="3.1.0">
+            <member minver="3.1.0">ctd-dummy</member>
+          </tunnel-applications>
+          <applicable-decoders>
+            <member>cip-ethernet-ip</member>
+          </applicable-decoders>
+          <risk>1</risk>
+          <preview>yes</preview>
+        </entry>
+        <entry id="10228" minver="7.1.0" name="cip-ethernet-ip-read-mod-write" ori_country="USA" ori_language="English">
+          <category>business-systems</category>
+          <subcategory>ics-protocols</subcategory>
+          <technology>client-server</technology>
+          <description>This App-ID provides operate functional control over EtherNet/IP. EtherNet/IP was introduced in 2001 and today is the most developed, proven and complete industrial Ethernet network solution available for manufacturing automation. EtherNet/IP is a member of a family of networks that implements the Common Industrial Protocol (CIP) at its upper layers. CIP encompasses a comprehensive suite of messages and services for a variety of manufacturing automation applications, including control, safety, synchronization, motion, configuration and information. As a truly media-independent protocol that is supported by hundreds of vendors around the world, CIP provides users with a unified communication architecture throughout the manufacturing enterprise. This protocol is typically used in Supervisory Control and Data Acquisition (SCADA) and Industrial Control System (ICS) applications. This App-ID detects read modify write command for CIP.</description>
+          <alg>yes</alg>
+          <appident>yes</appident>
+          <vulnerability-ident>yes</vulnerability-ident>
+          <evasive-behavior>no</evasive-behavior>
+          <consume-big-bandwidth>no</consume-big-bandwidth>
+          <used-by-malware>no</used-by-malware>
+          <able-to-transfer-file>no</able-to-transfer-file>
+          <has-known-vulnerability>yes</has-known-vulnerability>
+          <tunnel-other-application>no</tunnel-other-application>
+          <prone-to-misuse>no</prone-to-misuse>
+          <pervasive-use>no</pervasive-use>
+          <per-direction-regex>no</per-direction-regex>
+          <decode>cip-ethernet-ip</decode>
+          <deny-action>drop-reset</deny-action>
+          <cachable>no</cachable>
+          <can-disable>yes</can-disable>
+          <new-appid>yes</new-appid>
+          <parent-app>cip-ethernet-ip-base</parent-app>
+          <references>
+            <entry name="ODVA">
+              <link>http://www.odva.org/Home/ODVATECHNOLOGIES/EtherNetIP/tabid/67/lng/en-US/Default.aspx</link>
+            </entry>
+            <entry name="Wikipedia">
+              <link>http://en.wikipedia.org/wiki/EtherNet/IP</link>
+            </entry>
+          </references>
+          <default>
+            <port>
+              <member>tcp/44818</member>
+            </port>
+          </default>
+          <use-applications minver="3.1.0">
+            <member minver="3.1.0">cip-ethernet-ip-base</member>
+          </use-applications>
+          <tunnel-applications minver="3.1.0">
+            <member minver="7.1.0">cip-ethernet-ip-disable-io</member>
+            <member minver="7.1.0">cip-ethernet-ip-disable-sfc</member>
+            <member minver="3.1.0">ctd-dummy</member>
+          </tunnel-applications>
+          <applicable-decoders>
+            <member>cip-ethernet-ip</member>
+          </applicable-decoders>
+          <risk>1</risk>
+          <preview>yes</preview>
+        </entry>
+        <entry id="10224" minver="7.1.0" name="cip-ethernet-ip-read-tag" ori_country="USA" ori_language="English">
+          <category>business-systems</category>
+          <subcategory>ics-protocols</subcategory>
+          <technology>client-server</technology>
+          <description>This App-ID provides operate functional control over EtherNet/IP. EtherNet/IP was introduced in 2001 and today is the most developed, proven and complete industrial Ethernet network solution available for manufacturing automation. EtherNet/IP is a member of a family of networks that implements the Common Industrial Protocol (CIP) at its upper layers. CIP encompasses a comprehensive suite of messages and services for a variety of manufacturing automation applications, including control, safety, synchronization, motion, configuration and information. As a truly media-independent protocol that is supported by hundreds of vendors around the world, CIP provides users with a unified communication architecture throughout the manufacturing enterprise. This protocol is typically used in Supervisory Control and Data Acquisition (SCADA) and Industrial Control System (ICS) applications. This App-ID detects read tag command for CIP.</description>
+          <alg>yes</alg>
+          <appident>yes</appident>
+          <vulnerability-ident>yes</vulnerability-ident>
+          <evasive-behavior>no</evasive-behavior>
+          <consume-big-bandwidth>no</consume-big-bandwidth>
+          <used-by-malware>no</used-by-malware>
+          <able-to-transfer-file>no</able-to-transfer-file>
+          <has-known-vulnerability>yes</has-known-vulnerability>
+          <tunnel-other-application>no</tunnel-other-application>
+          <prone-to-misuse>no</prone-to-misuse>
+          <pervasive-use>no</pervasive-use>
+          <per-direction-regex>no</per-direction-regex>
+          <decode>cip-ethernet-ip</decode>
+          <deny-action>drop-reset</deny-action>
+          <cachable>no</cachable>
+          <can-disable>yes</can-disable>
+          <new-appid>yes</new-appid>
+          <parent-app>cip-ethernet-ip-base</parent-app>
+          <references>
+            <entry name="ODVA">
+              <link>http://www.odva.org/Home/ODVATECHNOLOGIES/EtherNetIP/tabid/67/lng/en-US/Default.aspx</link>
+            </entry>
+            <entry name="Wikipedia">
+              <link>http://en.wikipedia.org/wiki/EtherNet/IP</link>
+            </entry>
+          </references>
+          <default>
+            <port>
+              <member>tcp/44818</member>
+            </port>
+          </default>
+          <use-applications minver="3.1.0">
+            <member minver="3.1.0">cip-ethernet-ip-base</member>
+          </use-applications>
+          <tunnel-applications minver="3.1.0">
+            <member minver="3.1.0">ctd-dummy</member>
+          </tunnel-applications>
+          <applicable-decoders>
+            <member>cip-ethernet-ip</member>
+          </applicable-decoders>
+          <risk>1</risk>
+          <preview>yes</preview>
+        </entry>
+        <entry id="10225" minver="7.1.0" name="cip-ethernet-ip-read-tag-frag" ori_country="USA" ori_language="English">
+          <category>business-systems</category>
+          <subcategory>ics-protocols</subcategory>
+          <technology>client-server</technology>
+          <description>This App-ID provides operate functional control over EtherNet/IP. EtherNet/IP was introduced in 2001 and today is the most developed, proven and complete industrial Ethernet network solution available for manufacturing automation. EtherNet/IP is a member of a family of networks that implements the Common Industrial Protocol (CIP) at its upper layers. CIP encompasses a comprehensive suite of messages and services for a variety of manufacturing automation applications, including control, safety, synchronization, motion, configuration and information. As a truly media-independent protocol that is supported by hundreds of vendors around the world, CIP provides users with a unified communication architecture throughout the manufacturing enterprise. This protocol is typically used in Supervisory Control and Data Acquisition (SCADA) and Industrial Control System (ICS) applications. This App-ID detects read tag fragmented command for CIP.</description>
+          <alg>yes</alg>
+          <appident>yes</appident>
+          <vulnerability-ident>yes</vulnerability-ident>
+          <evasive-behavior>no</evasive-behavior>
+          <consume-big-bandwidth>no</consume-big-bandwidth>
+          <used-by-malware>no</used-by-malware>
+          <able-to-transfer-file>no</able-to-transfer-file>
+          <has-known-vulnerability>yes</has-known-vulnerability>
+          <tunnel-other-application>no</tunnel-other-application>
+          <prone-to-misuse>no</prone-to-misuse>
+          <pervasive-use>no</pervasive-use>
+          <per-direction-regex>no</per-direction-regex>
+          <decode>cip-ethernet-ip</decode>
+          <deny-action>drop-reset</deny-action>
+          <cachable>no</cachable>
+          <can-disable>yes</can-disable>
+          <new-appid>yes</new-appid>
+          <parent-app>cip-ethernet-ip-base</parent-app>
+          <references>
+            <entry name="ODVA">
+              <link>http://www.odva.org/Home/ODVATECHNOLOGIES/EtherNetIP/tabid/67/lng/en-US/Default.aspx</link>
+            </entry>
+            <entry name="Wikipedia">
+              <link>http://en.wikipedia.org/wiki/EtherNet/IP</link>
+            </entry>
+          </references>
+          <default>
+            <port>
+              <member>tcp/44818</member>
+            </port>
+          </default>
+          <use-applications minver="3.1.0">
+            <member minver="3.1.0">cip-ethernet-ip-base</member>
+          </use-applications>
+          <tunnel-applications minver="3.1.0">
+            <member minver="3.1.0">ctd-dummy</member>
+          </tunnel-applications>
+          <applicable-decoders>
+            <member>cip-ethernet-ip</member>
+          </applicable-decoders>
+          <risk>1</risk>
+          <preview>yes</preview>
+        </entry>
+        <entry id="10223" minver="7.1.0" name="cip-ethernet-ip-run" ori_country="USA" ori_language="English">
+          <category>business-systems</category>
+          <subcategory>ics-protocols</subcategory>
+          <technology>client-server</technology>
+          <description>This App-ID provides operate functional control over EtherNet/IP. EtherNet/IP was introduced in 2001 and today is the most developed, proven and complete industrial Ethernet network solution available for manufacturing automation. EtherNet/IP is a member of a family of networks that implements the Common Industrial Protocol (CIP) at its upper layers. CIP encompasses a comprehensive suite of messages and services for a variety of manufacturing automation applications, including control, safety, synchronization, motion, configuration and information. As a truly media-independent protocol that is supported by hundreds of vendors around the world, CIP provides users with a unified communication architecture throughout the manufacturing enterprise. This protocol is typically used in Supervisory Control and Data Acquisition (SCADA) and Industrial Control System (ICS) applications. This App-ID detects run command for CIP.</description>
+          <alg>yes</alg>
+          <appident>yes</appident>
+          <vulnerability-ident>yes</vulnerability-ident>
+          <evasive-behavior>no</evasive-behavior>
+          <consume-big-bandwidth>no</consume-big-bandwidth>
+          <used-by-malware>no</used-by-malware>
+          <able-to-transfer-file>no</able-to-transfer-file>
+          <has-known-vulnerability>yes</has-known-vulnerability>
+          <tunnel-other-application>no</tunnel-other-application>
+          <prone-to-misuse>no</prone-to-misuse>
+          <pervasive-use>no</pervasive-use>
+          <per-direction-regex>no</per-direction-regex>
+          <decode>cip-ethernet-ip</decode>
+          <deny-action>drop-reset</deny-action>
+          <cachable>no</cachable>
+          <can-disable>yes</can-disable>
+          <new-appid>yes</new-appid>
+          <parent-app>ctd-dummy</parent-app>
+          <references>
+            <entry name="ODVA">
+              <link>http://www.odva.org/Home/ODVATECHNOLOGIES/EtherNetIP/tabid/67/lng/en-US/Default.aspx</link>
+            </entry>
+            <entry name="Wikipedia">
+              <link>http://en.wikipedia.org/wiki/EtherNet/IP</link>
+            </entry>
+          </references>
+          <default>
+            <port>
+              <member>tcp/44818</member>
+            </port>
+          </default>
+          <use-applications minver="3.1.0">
+            <member minver="3.1.0">cip-ethernet-ip-base</member>
+          </use-applications>
+          <applicable-decoders>
+            <member>cip-ethernet-ip</member>
+          </applicable-decoders>
+          <risk>1</risk>
+          <preview>yes</preview>
+        </entry>
+        <entry id="10229" minver="7.1.0" name="cip-ethernet-ip-stop" ori_country="USA" ori_language="English">
+          <category>business-systems</category>
+          <subcategory>ics-protocols</subcategory>
+          <technology>client-server</technology>
+          <description>This App-ID provides operate functional control over EtherNet/IP. EtherNet/IP was introduced in 2001 and today is the most developed, proven and complete industrial Ethernet network solution available for manufacturing automation. EtherNet/IP is a member of a family of networks that implements the Common Industrial Protocol (CIP) at its upper layers. CIP encompasses a comprehensive suite of messages and services for a variety of manufacturing automation applications, including control, safety, synchronization, motion, configuration and information. As a truly media-independent protocol that is supported by hundreds of vendors around the world, CIP provides users with a unified communication architecture throughout the manufacturing enterprise. This protocol is typically used in Supervisory Control and Data Acquisition (SCADA) and Industrial Control System (ICS) applications. This App-ID detects stop command for CIP.</description>
+          <alg>yes</alg>
+          <appident>yes</appident>
+          <vulnerability-ident>yes</vulnerability-ident>
+          <evasive-behavior>no</evasive-behavior>
+          <consume-big-bandwidth>no</consume-big-bandwidth>
+          <used-by-malware>no</used-by-malware>
+          <able-to-transfer-file>no</able-to-transfer-file>
+          <has-known-vulnerability>yes</has-known-vulnerability>
+          <tunnel-other-application>no</tunnel-other-application>
+          <prone-to-misuse>no</prone-to-misuse>
+          <pervasive-use>no</pervasive-use>
+          <per-direction-regex>no</per-direction-regex>
+          <decode>cip-ethernet-ip</decode>
+          <deny-action>drop-reset</deny-action>
+          <cachable>no</cachable>
+          <can-disable>yes</can-disable>
+          <new-appid>yes</new-appid>
+          <parent-app>ctd-dummy</parent-app>
+          <references>
+            <entry name="ODVA">
+              <link>http://www.odva.org/Home/ODVATECHNOLOGIES/EtherNetIP/tabid/67/lng/en-US/Default.aspx</link>
+            </entry>
+            <entry name="Wikipedia">
+              <link>http://en.wikipedia.org/wiki/EtherNet/IP</link>
+            </entry>
+          </references>
+          <default>
+            <port>
+              <member>tcp/44818</member>
+            </port>
+          </default>
+          <use-applications minver="3.1.0">
+            <member minver="3.1.0">cip-ethernet-ip-base</member>
+          </use-applications>
+          <applicable-decoders>
+            <member>cip-ethernet-ip</member>
+          </applicable-decoders>
+          <risk>1</risk>
+          <preview>yes</preview>
+        </entry>
+        <entry id="10230" minver="7.1.0" name="cip-ethernet-ip-test-mode" ori_country="USA" ori_language="English">
+          <category>business-systems</category>
+          <subcategory>ics-protocols</subcategory>
+          <technology>client-server</technology>
+          <description>This App-ID provides operate functional control over EtherNet/IP. EtherNet/IP was introduced in 2001 and today is the most developed, proven and complete industrial Ethernet network solution available for manufacturing automation. EtherNet/IP is a member of a family of networks that implements the Common Industrial Protocol (CIP) at its upper layers. CIP encompasses a comprehensive suite of messages and services for a variety of manufacturing automation applications, including control, safety, synchronization, motion, configuration and information. As a truly media-independent protocol that is supported by hundreds of vendors around the world, CIP provides users with a unified communication architecture throughout the manufacturing enterprise. This protocol is typically used in Supervisory Control and Data Acquisition (SCADA) and Industrial Control System (ICS) applications. This App-ID detects test mode command for CIP.</description>
+          <alg>yes</alg>
+          <appident>yes</appident>
+          <vulnerability-ident>yes</vulnerability-ident>
+          <evasive-behavior>no</evasive-behavior>
+          <consume-big-bandwidth>no</consume-big-bandwidth>
+          <used-by-malware>no</used-by-malware>
+          <able-to-transfer-file>no</able-to-transfer-file>
+          <has-known-vulnerability>yes</has-known-vulnerability>
+          <tunnel-other-application>no</tunnel-other-application>
+          <prone-to-misuse>no</prone-to-misuse>
+          <pervasive-use>no</pervasive-use>
+          <per-direction-regex>no</per-direction-regex>
+          <decode>cip-ethernet-ip</decode>
+          <deny-action>drop-reset</deny-action>
+          <cachable>no</cachable>
+          <can-disable>yes</can-disable>
+          <new-appid>yes</new-appid>
+          <parent-app>ctd-dummy</parent-app>
+          <references>
+            <entry name="ODVA">
+              <link>http://www.odva.org/Home/ODVATECHNOLOGIES/EtherNetIP/tabid/67/lng/en-US/Default.aspx</link>
+            </entry>
+            <entry name="Wikipedia">
+              <link>http://en.wikipedia.org/wiki/EtherNet/IP</link>
+            </entry>
+          </references>
+          <default>
+            <port>
+              <member>tcp/44818</member>
+            </port>
+          </default>
+          <use-applications minver="3.1.0">
+            <member minver="3.1.0">cip-ethernet-ip-base</member>
+          </use-applications>
+          <applicable-decoders>
+            <member>cip-ethernet-ip</member>
+          </applicable-decoders>
+          <risk>1</risk>
+          <preview>yes</preview>
+        </entry>
+        <entry id="10226" minver="7.1.0" name="cip-ethernet-ip-write-tag" ori_country="USA" ori_language="English">
+          <category>business-systems</category>
+          <subcategory>ics-protocols</subcategory>
+          <technology>client-server</technology>
+          <description>This App-ID provides operate functional control over EtherNet/IP. EtherNet/IP was introduced in 2001 and today is the most developed, proven and complete industrial Ethernet network solution available for manufacturing automation. EtherNet/IP is a member of a family of networks that implements the Common Industrial Protocol (CIP) at its upper layers. CIP encompasses a comprehensive suite of messages and services for a variety of manufacturing automation applications, including control, safety, synchronization, motion, configuration and information. As a truly media-independent protocol that is supported by hundreds of vendors around the world, CIP provides users with a unified communication architecture throughout the manufacturing enterprise. This protocol is typically used in Supervisory Control and Data Acquisition (SCADA) and Industrial Control System (ICS) applications. This App-ID detects write tag command for CIP.</description>
+          <alg>yes</alg>
+          <appident>yes</appident>
+          <vulnerability-ident>yes</vulnerability-ident>
+          <evasive-behavior>no</evasive-behavior>
+          <consume-big-bandwidth>no</consume-big-bandwidth>
+          <used-by-malware>no</used-by-malware>
+          <able-to-transfer-file>no</able-to-transfer-file>
+          <has-known-vulnerability>yes</has-known-vulnerability>
+          <tunnel-other-application>no</tunnel-other-application>
+          <prone-to-misuse>no</prone-to-misuse>
+          <pervasive-use>no</pervasive-use>
+          <per-direction-regex>no</per-direction-regex>
+          <decode>cip-ethernet-ip</decode>
+          <deny-action>drop-reset</deny-action>
+          <cachable>no</cachable>
+          <can-disable>yes</can-disable>
+          <new-appid>yes</new-appid>
+          <parent-app>cip-ethernet-ip-base</parent-app>
+          <references>
+            <entry name="ODVA">
+              <link>http://www.odva.org/Home/ODVATECHNOLOGIES/EtherNetIP/tabid/67/lng/en-US/Default.aspx</link>
+            </entry>
+            <entry name="Wikipedia">
+              <link>http://en.wikipedia.org/wiki/EtherNet/IP</link>
+            </entry>
+          </references>
+          <default>
+            <port>
+              <member>tcp/44818</member>
+            </port>
+          </default>
+          <use-applications minver="3.1.0">
+            <member minver="3.1.0">cip-ethernet-ip-base</member>
+          </use-applications>
+          <tunnel-applications minver="3.1.0">
+            <member minver="7.1.0">cip-ethernet-ip-enable-io</member>
+            <member minver="7.1.0">cip-ethernet-ip-enable-sfc</member>
+            <member minver="3.1.0">ctd-dummy</member>
+          </tunnel-applications>
+          <applicable-decoders>
+            <member>cip-ethernet-ip</member>
+          </applicable-decoders>
+          <risk>1</risk>
+          <preview>yes</preview>
+        </entry>
+        <entry id="10227" minver="7.1.0" name="cip-ethernet-ip-write-tag-frag" ori_country="USA" ori_language="English">
+          <category>business-systems</category>
+          <subcategory>ics-protocols</subcategory>
+          <technology>client-server</technology>
+          <description>This App-ID provides operate functional control over EtherNet/IP. EtherNet/IP was introduced in 2001 and today is the most developed, proven and complete industrial Ethernet network solution available for manufacturing automation. EtherNet/IP is a member of a family of networks that implements the Common Industrial Protocol (CIP) at its upper layers. CIP encompasses a comprehensive suite of messages and services for a variety of manufacturing automation applications, including control, safety, synchronization, motion, configuration and information. As a truly media-independent protocol that is supported by hundreds of vendors around the world, CIP provides users with a unified communication architecture throughout the manufacturing enterprise. This protocol is typically used in Supervisory Control and Data Acquisition (SCADA) and Industrial Control System (ICS) applications. This App-ID detects write tag fragmented command for CIP.</description>
+          <alg>yes</alg>
+          <appident>yes</appident>
+          <vulnerability-ident>yes</vulnerability-ident>
+          <evasive-behavior>no</evasive-behavior>
+          <consume-big-bandwidth>no</consume-big-bandwidth>
+          <used-by-malware>no</used-by-malware>
+          <able-to-transfer-file>no</able-to-transfer-file>
+          <has-known-vulnerability>yes</has-known-vulnerability>
+          <tunnel-other-application>no</tunnel-other-application>
+          <prone-to-misuse>no</prone-to-misuse>
+          <pervasive-use>no</pervasive-use>
+          <per-direction-regex>no</per-direction-regex>
+          <decode>cip-ethernet-ip</decode>
+          <deny-action>drop-reset</deny-action>
+          <cachable>no</cachable>
+          <can-disable>yes</can-disable>
+          <new-appid>yes</new-appid>
+          <parent-app>cip-ethernet-ip-base</parent-app>
+          <references>
+            <entry name="ODVA">
+              <link>http://www.odva.org/Home/ODVATECHNOLOGIES/EtherNetIP/tabid/67/lng/en-US/Default.aspx</link>
+            </entry>
+            <entry name="Wikipedia">
+              <link>http://en.wikipedia.org/wiki/EtherNet/IP</link>
+            </entry>
+          </references>
+          <default>
+            <port>
+              <member>tcp/44818</member>
+            </port>
+          </default>
+          <use-applications minver="3.1.0">
+            <member minver="3.1.0">cip-ethernet-ip-base</member>
+          </use-applications>
+          <tunnel-applications minver="3.1.0">
+            <member minver="3.1.0">ctd-dummy</member>
+          </tunnel-applications>
+          <applicable-decoders>
+            <member>cip-ethernet-ip</member>
+          </applicable-decoders>
+          <risk>1</risk>
+          <preview>yes</preview>
+        </entry>
+        <entry id="10416" minver="8.1.0" name="dingtalk-file-transfer" ori_country="USA" ori_language="English">
+          <category>collaboration</category>
+          <subcategory>instant-messaging</subcategory>
+          <technology>client-server</technology>
+          <description>This App-ID identifies the file-transfer functionality of dingtalk. DingTalk is an enterprise communication and collaboration platform developed by Alibaba Group.</description>
+          <appident>yes</appident>
+          <virus-ident>yes</virus-ident>
+          <file-type-ident>yes</file-type-ident>
+          <evasive-behavior>no</evasive-behavior>
+          <consume-big-bandwidth>no</consume-big-bandwidth>
+          <used-by-malware>no</used-by-malware>
+          <able-to-transfer-file>yes</able-to-transfer-file>
+          <has-known-vulnerability>no</has-known-vulnerability>
+          <tunnel-other-application>no</tunnel-other-application>
+          <prone-to-misuse>no</prone-to-misuse>
+          <pervasive-use>no</pervasive-use>
+          <per-direction-regex>no</per-direction-regex>
+          <deny-action>drop-reset</deny-action>
+          <data-ident>yes</data-ident>
+          <cachable>no</cachable>
+          <file-forward>yes</file-forward>
+          <can-disable>yes</can-disable>
+          <new-appid>yes</new-appid>
+          <parent-app>dingtalk-base</parent-app>
+          <tag minver="9.1.0">
+            <member>[Web App]</member>
+          </tag>
+          <references>
+            <entry name="Dingtalk">
+              <link>https://www.dingtalk.com</link>
+            </entry>
+            <entry name="Wikipedia">
+              <link>https://en.wikipedia.org/wiki/DingTalk</link>
+            </entry>
+          </references>
+          <default>
+            <port>
+              <member>tcp/443,80</member>
+            </port>
+          </default>
+          <use-applications>
+            <member minver="5.0.0">dingtalk-base</member>
+            <member>ssl</member>
+            <member>web-browsing</member>
+          </use-applications>
+          <implicit-use-applications>
+            <member>web-browsing</member>
+          </implicit-use-applications>
+          <risk>1</risk>
+          <preview>yes</preview>
+        </entry>
+        <entry id="3020" minver="5.0.0" name="dingtalk-base" ori_country="USA" ori_language="English">
+          <ottawa-name>dingtalk</ottawa-name>
+          <category>collaboration</category>
+          <subcategory>instant-messaging</subcategory>
+          <technology>client-server</technology>
+          <description>DingTalk is an enterprise communication and collaboration platform developed by Alibaba Group. It is one of the largest professional communication and management apps in China. This app-id covers traffic from the Dinktalk client.</description>
+          <appident>yes</appident>
+          <spyware-ident>yes</spyware-ident>
+          <vulnerability-ident>yes</vulnerability-ident>
+          <evasive-behavior>no</evasive-behavior>
+          <consume-big-bandwidth>no</consume-big-bandwidth>
+          <used-by-malware>no</used-by-malware>
+          <able-to-transfer-file>yes</able-to-transfer-file>
+          <has-known-vulnerability>no</has-known-vulnerability>
+          <tunnel-other-application>no</tunnel-other-application>
+          <prone-to-misuse>no</prone-to-misuse>
+          <pervasive-use>no</pervasive-use>
+          <per-direction-regex>no</per-direction-regex>
+          <deny-action>drop-reset</deny-action>
+          <cachable>no</cachable>
+          <tag minver="9.1.0">
+            <member>[Web App]</member>
+          </tag>
+          <references>
+            <entry name="Dingtalk">
+              <link>https://www.dingtalk.com</link>
+            </entry>
+            <entry name="Wikipedia">
+              <link>https://en.wikipedia.org/wiki/DingTalk</link>
+            </entry>
+          </references>
+          <default>
+            <port>
+              <member>tcp/443</member>
+            </port>
+          </default>
+          <use-applications>
+            <member>ssl</member>
+          </use-applications>
+          <tunnel-applications minver="8.1.0">
+            <member minver="8.1.0">dingtalk-file-transfer</member>
+          </tunnel-applications>
+          <implicit-use-applications>
+            <member>ssl</member>
+          </implicit-use-applications>
+          <applicable-decoders>
+            <member>ssl</member>
+          </applicable-decoders>
+          <risk>1</risk>
+          <application-container>dingtalk</application-container>
+          <preview>yes</preview>
+        </entry>
+        <entry id="10422" minver="8.1.0" name="jandi" ori_country="USA" ori_language="English">
+          <category>collaboration</category>
+          <subcategory>instant-messaging</subcategory>
+          <technology>browser-based</technology>
+          <description>JANDI is a business messaging app with built-in workplace productivity features.
+This App-ID covers desktop App and web traffic for JANDI.</description>
+          <appident>yes</appident>
+          <virus-ident>yes</virus-ident>
+          <spyware-ident>yes</spyware-ident>
+          <file-type-ident>yes</file-type-ident>
+          <vulnerability-ident>yes</vulnerability-ident>
+          <evasive-behavior>no</evasive-behavior>
+          <consume-big-bandwidth>no</consume-big-bandwidth>
+          <used-by-malware>no</used-by-malware>
+          <able-to-transfer-file>yes</able-to-transfer-file>
+          <has-known-vulnerability>yes</has-known-vulnerability>
+          <tunnel-other-application>no</tunnel-other-application>
+          <prone-to-misuse>no</prone-to-misuse>
+          <pervasive-use>no</pervasive-use>
+          <per-direction-regex>no</per-direction-regex>
+          <deny-action>drop-reset</deny-action>
+          <data-ident>yes</data-ident>
+          <cachable>no</cachable>
+          <file-forward>yes</file-forward>
+          <can-disable>yes</can-disable>
+          <new-appid>yes</new-appid>
+          <parent-app>amazon-aws-console</parent-app>
+          <tag minver="9.1.0">
+            <member>[Web App]</member>
+          </tag>
+          <references>
+            <entry name="JANDI">
+              <link>https://www.jandi.com/landing/en</link>
+            </entry>
+          </references>
+          <default>
+            <port>
+              <member>tcp/80,443</member>
+            </port>
+          </default>
+          <use-applications>
+            <member minver="3.1.0">amazon-aws-console</member>
+            <member>ssl</member>
+            <member>web-browsing</member>
+            <member minver="3.1.0">websocket</member>
+          </use-applications>
+          <implicit-use-applications>
+            <member>ssl</member>
+            <member>web-browsing</member>
+          </implicit-use-applications>
+          <applicable-decoders>
+            <member>http</member>
+            <member>ssl</member>
+          </applicable-decoders>
+          <risk>2</risk>
+          <preview>yes</preview>
+        </entry>
+        <entry id="10426" minver="7.1.0" name="litemanager" ori_country="USA" ori_language="English">
+          <category>networking</category>
+          <subcategory>remote-access</subcategory>
+          <technology>client-server</technology>
+          <description>LiteManager is a program for remote administration of Windows-based computers. The program allows remote access from LiteManager Viewer to LiteManager Server. This App-ID covers Direct IP connection and ID/NoIP connection.</description>
+          <appident>yes</appident>
+          <evasive-behavior>no</evasive-behavior>
+          <consume-big-bandwidth>no</consume-big-bandwidth>
+          <used-by-malware>no</used-by-malware>
+          <able-to-transfer-file>no</able-to-transfer-file>
+          <has-known-vulnerability>no</has-known-vulnerability>
+          <tunnel-other-application>no</tunnel-other-application>
+          <prone-to-misuse>no</prone-to-misuse>
+          <pervasive-use>no</pervasive-use>
+          <per-direction-regex>no</per-direction-regex>
+          <deny-action>drop-reset</deny-action>
+          <cachable>no</cachable>
+          <new-appid>yes</new-appid>
+          <references>
+            <entry name="LiteManager">
+              <link>http://litemanager.com/</link>
+            </entry>
+          </references>
+          <default>
+            <extended-port>
+              <member>tcp/5650,5651,25651</member>
+            </extended-port>
+          </default>
+          <risk>1</risk>
+          <preview>yes</preview>
+        </entry>
+        <entry id="10412" minver="7.1.0" name="omnicell-dispensers" ori_country="USA" ori_language="English">
+          <category>business-systems</category>
+          <subcategory>medical</subcategory>
+          <technology>client-server</technology>
+          <description>Omnicell provides pharmacy and medication management solutions. Their products like Automated Dispensing communicates with their serverCabinets/management software over the network. This App-ID covers omnicell medication dispensers.</description>
+          <appident>yes</appident>
+          <evasive-behavior>no</evasive-behavior>
+          <consume-big-bandwidth>no</consume-big-bandwidth>
+          <used-by-malware>no</used-by-malware>
+          <able-to-transfer-file>no</able-to-transfer-file>
+          <has-known-vulnerability>no</has-known-vulnerability>
+          <tunnel-other-application>no</tunnel-other-application>
+          <prone-to-misuse>no</prone-to-misuse>
+          <pervasive-use>no</pervasive-use>
+          <per-direction-regex>no</per-direction-regex>
+          <deny-action>drop-reset</deny-action>
+          <cachable>no</cachable>
+          <new-appid>yes</new-appid>
+          <references>
+            <entry name="Omnicell">
+              <link>https://www.omnicell.com/products/point-of-care/omnicell-xt-automated-dispensing-cabinets#:~:text=Managing%20medications%20is%20a%20critical,the%20overall%20patient%20medication%20experience</link>
+            </entry>
+          </references>
+          <default>
+            <port>
+              <member>tcp/1801</member>
+            </port>
+          </default>
+          <risk>1</risk>
+          <preview>yes</preview>
+        </entry>
+        <entry id="10419" minver="7.1.0" name="pfcp" ori_country="USA" ori_language="English">
+          <category>networking</category>
+          <subcategory>infrastructure</subcategory>
+          <technology>network-protocol</technology>
+          <description>PFCP protocol is used for securing access over N4 interface between User Plane function (UPF) and session management function (SMF) in 5G network. This protocol also runs over Sx interfaces in Control and User plane seperation (CUPS) architecture in 4G network. PFCP utilizes UDP in the transport layer and is defined in the 3GPP TS 29.244. It is used to configure packet detection rules, forwarding action, QoS enforcement etc for every PDU session. This App-ID covers traffic for PFCP protocol.</description>
+          <appident>yes</appident>
+          <evasive-behavior>no</evasive-behavior>
+          <consume-big-bandwidth>no</consume-big-bandwidth>
+          <used-by-malware>no</used-by-malware>
+          <able-to-transfer-file>no</able-to-transfer-file>
+          <has-known-vulnerability>no</has-known-vulnerability>
+          <tunnel-other-application>no</tunnel-other-application>
+          <prone-to-misuse>no</prone-to-misuse>
+          <pervasive-use>no</pervasive-use>
+          <per-direction-regex>no</per-direction-regex>
+          <deny-action>drop-reset</deny-action>
+          <cachable>no</cachable>
+          <can-disable>yes</can-disable>
+          <new-appid>yes</new-appid>
+          <references>
+            <entry name="Wikipedia">
+              <link>https://en.wikipedia.org/wiki/PFCP</link>
+            </entry>
+          </references>
+          <default>
+            <port>
+              <member>udp/8805</member>
+            </port>
+          </default>
+          <risk>1</risk>
+          <preview>yes</preview>
+        </entry>
+        <entry id="10418" minver="7.1.0" name="philips-ecg" ori_country="USA" ori_language="English">
+          <category>business-systems</category>
+          <subcategory>medical</subcategory>
+          <technology>client-server</technology>
+          <description>Philips ECG Machine communicate with Philips IntelliSpace ECG or Legacy TraceMastervue ECG Management System to obtain work orders and upload ECG reports for central storage. This App-ID covers traffic from Philips ECG machines.</description>
+          <alg>yes</alg>
+          <appident>yes</appident>
+          <vulnerability-ident>yes</vulnerability-ident>
+          <evasive-behavior>no</evasive-behavior>
+          <consume-big-bandwidth>no</consume-big-bandwidth>
+          <used-by-malware>no</used-by-malware>
+          <able-to-transfer-file>no</able-to-transfer-file>
+          <has-known-vulnerability>yes</has-known-vulnerability>
+          <tunnel-other-application>no</tunnel-other-application>
+          <prone-to-misuse>no</prone-to-misuse>
+          <pervasive-use>no</pervasive-use>
+          <per-direction-regex>no</per-direction-regex>
+          <decode>medical</decode>
+          <deny-action>drop-reset</deny-action>
+          <cachable>no</cachable>
+          <can-disable>yes</can-disable>
+          <new-appid>yes</new-appid>
+          <references>
+            <entry name="Philips">
+              <link>https://www.usa.philips.com/healthcare/solutions/diagnostic-ecg/diagnostic-ecg</link>
+            </entry>
+          </references>
+          <default>
+            <port>
+              <member>tcp/80,443</member>
+            </port>
+          </default>
+          <risk>1</risk>
+          <preview>yes</preview>
+        </entry>
+        <entry id="10423" minver="7.1.0" name="retrospect-backup" ori_country="USA" ori_language="English">
+          <category>business-systems</category>
+          <subcategory>storage-backup</subcategory>
+          <technology>client-server</technology>
+          <description>Retrospect is a family of software applications that back up computers running the macOS, Microsoft Windows, and Linux. It uses a client-server backup model. This App-ID covers the backup traffic of retrospect client application to dropbox, amazon s3 and backblaze b2 cloud storage.</description>
+          <appident>yes</appident>
+          <vulnerability-ident>yes</vulnerability-ident>
+          <evasive-behavior>no</evasive-behavior>
+          <consume-big-bandwidth>no</consume-big-bandwidth>
+          <used-by-malware>no</used-by-malware>
+          <able-to-transfer-file>yes</able-to-transfer-file>
+          <has-known-vulnerability>yes</has-known-vulnerability>
+          <tunnel-other-application>no</tunnel-other-application>
+          <prone-to-misuse>no</prone-to-misuse>
+          <pervasive-use>no</pervasive-use>
+          <per-direction-regex>no</per-direction-regex>
+          <deny-action>drop-reset</deny-action>
+          <data-ident>yes</data-ident>
+          <cachable>no</cachable>
+          <can-disable>yes</can-disable>
+          <new-appid>yes</new-appid>
+          <parent-app>web20_parrent_app</parent-app>
+          <tag minver="9.1.0">
+            <member>[Web App]</member>
+          </tag>
+          <references>
+            <entry name="Wikipedia">
+              <link>https://en.wikipedia.org/wiki/Retrospect_(software)</link>
+            </entry>
+          </references>
+          <default>
+            <port>
+              <member>tcp/443,80</member>
+            </port>
+          </default>
+          <use-applications>
+            <member>ssl</member>
+            <member>web-browsing</member>
+          </use-applications>
+          <implicit-use-applications>
+            <member>web-browsing</member>
+          </implicit-use-applications>
+          <applicable-decoders>
+            <member>http</member>
+          </applicable-decoders>
+          <risk>2</risk>
+          <preview>yes</preview>
+        </entry>
+        <entry id="10425" minver="7.1.0" name="siemens-s7-comm-plus-download" ori_country="USA" ori_language="English">
+          <category>business-systems</category>
+          <subcategory>ics-protocols</subcategory>
+          <technology>network-protocol</technology>
+          <description>The S7 Comm Plus protocol is a new version of the original S7 Comm protocol. It is a proprietary communications protocol developed by Siemens that runs between programmable logic controllers (PLCs) of the Siemens S7 family. This App-ID covers the downloading traffic of S7 Comm Plus.</description>
+          <alg>yes</alg>
+          <appident>yes</appident>
+          <vulnerability-ident>yes</vulnerability-ident>
+          <evasive-behavior>no</evasive-behavior>
+          <consume-big-bandwidth>no</consume-big-bandwidth>
+          <used-by-malware>no</used-by-malware>
+          <able-to-transfer-file>no</able-to-transfer-file>
+          <has-known-vulnerability>yes</has-known-vulnerability>
+          <tunnel-other-application>no</tunnel-other-application>
+          <prone-to-misuse>no</prone-to-misuse>
+          <pervasive-use>no</pervasive-use>
+          <per-direction-regex>no</per-direction-regex>
+          <decode>cotp</decode>
+          <deny-action>drop-reset</deny-action>
+          <cachable>no</cachable>
+          <can-disable>yes</can-disable>
+          <new-appid>yes</new-appid>
+          <parent-app>siemens-s7-comm-plus-base</parent-app>
+          <references>
+            <entry name="S7-1500 plus TIA Portal">
+              <link>http://www.aainy.com/pdf/rkc_instrument_simatic_s7_1500_plus_tia_portal.pdf</link>
+            </entry>
+          </references>
+          <default>
+            <port>
+              <member>tcp/102</member>
+            </port>
+          </default>
+          <use-applications minver="7.1.0">
+            <member minver="7.1.0">siemens-s7-comm-plus-base</member>
+          </use-applications>
+          <applicable-decoders>
+            <member>cotp</member>
+          </applicable-decoders>
+          <risk>1</risk>
+          <preview>yes</preview>
+        </entry>
+        <entry id="10424" minver="7.1.0" name="siemens-s7-comm-plus-upload" ori_country="USA" ori_language="English">
+          <category>business-systems</category>
+          <subcategory>ics-protocols</subcategory>
+          <technology>network-protocol</technology>
+          <description>The S7 Comm Plus protocol is a new version of the original S7 Comm protocol. It is a proprietary communications protocol developed by Siemens that runs between programmable logic controllers (PLCs) of the Siemens S7 family. This App-ID covers the uploading traffic of S7 Comm Plus.</description>
+          <alg>yes</alg>
+          <appident>yes</appident>
+          <vulnerability-ident>yes</vulnerability-ident>
+          <evasive-behavior>no</evasive-behavior>
+          <consume-big-bandwidth>no</consume-big-bandwidth>
+          <used-by-malware>no</used-by-malware>
+          <able-to-transfer-file>no</able-to-transfer-file>
+          <has-known-vulnerability>yes</has-known-vulnerability>
+          <tunnel-other-application>no</tunnel-other-application>
+          <prone-to-misuse>no</prone-to-misuse>
+          <pervasive-use>no</pervasive-use>
+          <per-direction-regex>no</per-direction-regex>
+          <decode>cotp</decode>
+          <deny-action>drop-reset</deny-action>
+          <cachable>no</cachable>
+          <can-disable>yes</can-disable>
+          <new-appid>yes</new-appid>
+          <parent-app>siemens-s7-comm-plus-base</parent-app>
+          <references>
+            <entry name="S7-1500 plus TIA Portal">
+              <link>http://www.aainy.com/pdf/rkc_instrument_simatic_s7_1500_plus_tia_portal.pdf</link>
+            </entry>
+          </references>
+          <default>
+            <port>
+              <member>tcp/102</member>
+            </port>
+          </default>
+          <use-applications minver="7.1.0">
+            <member minver="7.1.0">siemens-s7-comm-plus-base</member>
+          </use-applications>
+          <applicable-decoders>
+            <member>cotp</member>
+          </applicable-decoders>
+          <risk>1</risk>
+          <preview>yes</preview>
+        </entry>
+        <entry id="10414" minver="7.1.0" name="smiths-pharmguard" ori_country="USA" ori_language="English">
+          <category>business-systems</category>
+          <subcategory>medical</subcategory>
+          <technology>client-server</technology>
+          <description>Smiths Medical infusion pumps communicate with Smiths Medical PharmGuard server over the network. The server runs PharmGuard&amp;#xAE; Server Infusion Management Software that remotely manages the infusion pumps. This App-ID covers Smiths medical pharmguard server traffic on tcp port 1588.</description>
+          <alg>yes</alg>
+          <appident>yes</appident>
+          <evasive-behavior>no</evasive-behavior>
+          <consume-big-bandwidth>no</consume-big-bandwidth>
+          <used-by-malware>no</used-by-malware>
+          <able-to-transfer-file>no</able-to-transfer-file>
+          <has-known-vulnerability>no</has-known-vulnerability>
+          <tunnel-other-application>no</tunnel-other-application>
+          <prone-to-misuse>no</prone-to-misuse>
+          <pervasive-use>no</pervasive-use>
+          <per-direction-regex>no</per-direction-regex>
+          <decode>generic2</decode>
+          <deny-action>drop-reset</deny-action>
+          <cachable>no</cachable>
+          <new-appid>yes</new-appid>
+          <references>
+            <entry name="Smiths-medical">
+              <link>https://www.smiths-medical.com/products/infusion/infusion-software/pharmguard-medication-safety-software</link>
+            </entry>
+          </references>
+          <default>
+            <port>
+              <member>tcp/1588</member>
+            </port>
+          </default>
+          <risk>1</risk>
+          <preview>yes</preview>
+        </entry>
+        <entry id="10420" minver="7.1.0" name="welch-allyn-vsm" ori_country="USA" ori_language="English">
+          <category>business-systems</category>
+          <subcategory>medical</subcategory>
+          <technology>client-server</technology>
+          <description>Welch Allyn Vital Signs Monitor provides healthcare providers access to patient vitals data. The monitors communicate with a remote server over the network. This App-ID covers network traffic for Welch Allyn Vital Signs Monitor device.</description>
+          <alg>yes</alg>
+          <appident>yes</appident>
+          <evasive-behavior>no</evasive-behavior>
+          <consume-big-bandwidth>no</consume-big-bandwidth>
+          <used-by-malware>no</used-by-malware>
+          <able-to-transfer-file>no</able-to-transfer-file>
+          <has-known-vulnerability>no</has-known-vulnerability>
+          <tunnel-other-application>no</tunnel-other-application>
+          <prone-to-misuse>no</prone-to-misuse>
+          <pervasive-use>no</pervasive-use>
+          <per-direction-regex>no</per-direction-regex>
+          <decode>medical</decode>
+          <deny-action>drop-reset</deny-action>
+          <cachable>no</cachable>
+          <new-appid>yes</new-appid>
+          <references>
+            <entry name="Welch Allyn">
+              <link>https://www.welchallyn.com/en/products/categories/patient-monitoring/vital-signs-devices.html</link>
+            </entry>
+          </references>
+          <default>
+            <port>
+              <member>tcp/281,283</member>
+            </port>
+          </default>
+          <risk>1</risk>
+          <preview>yes</preview>
+        </entry>
+      </application>
+      <application-type>
+        <category/>
+        <technology/>
+      </application-type>
+    </content-preview>
+  </shared>
+  <devices>
+    <entry name="localhost.localdomain">
+      <network>
+        <interface>
+          <ethernet>
+            <entry name="ethernet1/1">
+              <layer3>
+                <ndp-proxy>
+                  <enabled>no</enabled>
+                </ndp-proxy>
+                <interface-management-profile>allow_ping</interface-management-profile>
+                <lldp>
+                  <enable>no</enable>
+                </lldp>
+                <dhcp-client/>
+              </layer3>
+            </entry>
+            <entry name="ethernet1/2">
+              <layer3>
+                <ndp-proxy>
+                  <enabled>no</enabled>
+                </ndp-proxy>
+                <interface-management-profile>allow_ping</interface-management-profile>
+                <lldp>
+                  <enable>no</enable>
+                </lldp>
+                <dhcp-client>
+                  <create-default-route>no</create-default-route>
+                </dhcp-client>
+              </layer3>
+            </entry>
+          </ethernet>
+        </interface>
+        <profiles>
+          <monitor-profile>
+            <entry name="default">
+              <interval>3</interval>
+              <threshold>5</threshold>
+              <action>wait-recover</action>
+            </entry>
+          </monitor-profile>
+          <interface-management-profile>
+            <entry name="allow_ping">
+              <ping>yes</ping>
+              <http>no</http>
+              <https>no</https>
+              <http-ocsp>no</http-ocsp>
+              <ssh>no</ssh>
+              <snmp>no</snmp>
+              <response-pages>no</response-pages>
+              <telnet>no</telnet>
+            </entry>
+          </interface-management-profile>
+        </profiles>
+        <ike>
+          <crypto-profiles>
+            <ike-crypto-profiles>
+              <entry name="default">
+                <encryption>
+                  <member>aes-128-cbc</member>
+                  <member>3des</member>
+                </encryption>
+                <hash>
+                  <member>sha1</member>
+                </hash>
+                <dh-group>
+                  <member>group2</member>
+                </dh-group>
+                <lifetime>
+                  <hours>8</hours>
+                </lifetime>
+              </entry>
+              <entry name="Suite-B-GCM-128">
+                <encryption>
+                  <member>aes-128-cbc</member>
+                </encryption>
+                <hash>
+                  <member>sha256</member>
+                </hash>
+                <dh-group>
+                  <member>group19</member>
+                </dh-group>
+                <lifetime>
+                  <hours>8</hours>
+                </lifetime>
+              </entry>
+              <entry name="Suite-B-GCM-256">
+                <encryption>
+                  <member>aes-256-cbc</member>
+                </encryption>
+                <hash>
+                  <member>sha384</member>
+                </hash>
+                <dh-group>
+                  <member>group20</member>
+                </dh-group>
+                <lifetime>
+                  <hours>8</hours>
+                </lifetime>
+              </entry>
+            </ike-crypto-profiles>
+            <ipsec-crypto-profiles>
+              <entry name="default">
+                <esp>
+                  <encryption>
+                    <member>aes-128-cbc</member>
+                    <member>3des</member>
+                  </encryption>
+                  <authentication>
+                    <member>sha1</member>
+                  </authentication>
+                </esp>
+                <dh-group>group2</dh-group>
+                <lifetime>
+                  <hours>1</hours>
+                </lifetime>
+              </entry>
+              <entry name="Suite-B-GCM-128">
+                <esp>
+                  <encryption>
+                    <member>aes-128-gcm</member>
+                  </encryption>
+                  <authentication>
+                    <member>none</member>
+                  </authentication>
+                </esp>
+                <dh-group>group19</dh-group>
+                <lifetime>
+                  <hours>1</hours>
+                </lifetime>
+              </entry>
+              <entry name="Suite-B-GCM-256">
+                <esp>
+                  <encryption>
+                    <member>aes-256-gcm</member>
+                  </encryption>
+                  <authentication>
+                    <member>none</member>
+                  </authentication>
+                </esp>
+                <dh-group>group20</dh-group>
+                <lifetime>
+                  <hours>1</hours>
+                </lifetime>
+              </entry>
+            </ipsec-crypto-profiles>
+            <global-protect-app-crypto-profiles>
+              <entry name="default">
+                <encryption>
+                  <member>aes-128-cbc</member>
+                </encryption>
+                <authentication>
+                  <member>sha1</member>
+                </authentication>
+              </entry>
+            </global-protect-app-crypto-profiles>
+          </crypto-profiles>
+        </ike>
+        <qos>
+          <profile>
+            <entry name="default">
+              <class-bandwidth-type>
+                <mbps>
+                  <class>
+                    <entry name="class1">
+                      <priority>real-time</priority>
+                    </entry>
+                    <entry name="class2">
+                      <priority>high</priority>
+                    </entry>
+                    <entry name="class3">
+                      <priority>high</priority>
+                    </entry>
+                    <entry name="class4">
+                      <priority>medium</priority>
+                    </entry>
+                    <entry name="class5">
+                      <priority>medium</priority>
+                    </entry>
+                    <entry name="class6">
+                      <priority>low</priority>
+                    </entry>
+                    <entry name="class7">
+                      <priority>low</priority>
+                    </entry>
+                    <entry name="class8">
+                      <priority>low</priority>
+                    </entry>
+                  </class>
+                </mbps>
+              </class-bandwidth-type>
+            </entry>
+          </profile>
+        </qos>
+        <virtual-router>
+          <entry name="default">
+            <protocol>
+              <bgp>
+                <enable>no</enable>
+                <dampening-profile>
+                  <entry name="default">
+                    <cutoff>1.25</cutoff>
+                    <reuse>0.5</reuse>
+                    <max-hold-time>900</max-hold-time>
+                    <decay-half-life-reachable>300</decay-half-life-reachable>
+                    <decay-half-life-unreachable>900</decay-half-life-unreachable>
+                    <enable>yes</enable>
+                  </entry>
+                </dampening-profile>
+              </bgp>
+            </protocol>
+            <interface>
+              <member>ethernet1/1</member>
+              <member>ethernet1/2</member>
+            </interface>
+          </entry>
+        </virtual-router>
+      </network>
+      <deviceconfig>
+        <system>
+          <type>
+            <dhcp-client>
+              <send-hostname>yes</send-hostname>
+              <send-client-id>no</send-client-id>
+              <accept-dhcp-hostname>no</accept-dhcp-hostname>
+              <accept-dhcp-domain>no</accept-dhcp-domain>
+            </dhcp-client>
+          </type>
+          <update-server>updates.paloaltonetworks.com</update-server>
+          <update-schedule>
+            <threats>
+              <recurring>
+                <weekly>
+                  <day-of-week>wednesday</day-of-week>
+                  <at>01:02</at>
+                  <action>download-only</action>
+                </weekly>
+              </recurring>
+            </threats>
+          </update-schedule>
+          <timezone>US/Pacific</timezone>
+          <service>
+            <disable-telnet>yes</disable-telnet>
+            <disable-http>yes</disable-http>
+          </service>
+          <hostname>PA-VM</hostname>
+        </system>
+        <setting>
+          <config>
+            <rematch>yes</rematch>
+          </config>
+          <management>
+            <hostname-type-in-syslog>FQDN</hostname-type-in-syslog>
+            <initcfg>
+              <type>
+                <dhcp-client>
+                  <send-hostname>yes</send-hostname>
+                  <send-client-id>no</send-client-id>
+                  <accept-dhcp-hostname>no</accept-dhcp-hostname>
+                  <accept-dhcp-domain>no</accept-dhcp-domain>
+                </dhcp-client>
+              </type>
+              <public-key>REDACTED</public-key>
+            </initcfg>
+          </management>
+        </setting>
+      </deviceconfig>
+      <vsys>
+        <entry name="vsys1">
+          <application/>
+          <application-group/>
+          <zone>
+            <entry name="untrust">
+              <network>
+                <layer3>
+                  <member>ethernet1/1</member>
+                </layer3>
+              </network>
+            </entry>
+            <entry name="trust">
+              <network>
+                <layer3>
+                  <member>ethernet1/2</member>
+                </layer3>
+              </network>
+            </entry>
+          </zone>
+          <service/>
+          <service-group/>
+          <schedule/>
+          <rulebase>
+            <nat>
+              <rules>
+                <entry name="NAT2WebServer" uuid="d35519c6-43f7-45c5-8c05-0dd66177fd7d">
+                  <to>
+                    <member>untrust</member>
+                  </to>
+                  <from>
+                    <member>untrust</member>
+                  </from>
+                  <source>
+                    <member>any</member>
+                  </source>
+                  <destination>
+                    <member>10.0.0.10</member>
+                  </destination>
+                  <service>any</service>
+                  <destination-translation>
+                    <translated-address>10.0.1.88</translated-address>
+                  </destination-translation>
+                </entry>
+                <entry name="NAT2External" uuid="e5308475-0dba-458b-8129-080c73ff22f9">
+                  <source-translation>
+                    <dynamic-ip-and-port>
+                      <translated-address>
+                        <member>10.0.0.10</member>
+                      </translated-address>
+                    </dynamic-ip-and-port>
+                  </source-translation>
+                  <to>
+                    <member>untrust</member>
+                  </to>
+                  <from>
+                    <member>trust</member>
+                  </from>
+                  <source>
+                    <member>any</member>
+                  </source>
+                  <destination>
+                    <member>any</member>
+                  </destination>
+                  <service>any</service>
+                </entry>
+              </rules>
+            </nat>
+            <security>
+              <rules>
+                <entry name="AllowManagement" uuid="bd7e6155-f5ec-407b-b8ce-2b3c8454cef0">
+                  <to>
+                    <member>trust</member>
+                  </to>
+                  <from>
+                    <member>untrust</member>
+                  </from>
+                  <source>
+                    <member>any</member>
+                  </source>
+                  <destination>
+                    <member>any</member>
+                  </destination>
+                  <source-user>
+                    <member>any</member>
+                  </source-user>
+                  <category>
+                    <member>any</member>
+                  </category>
+                  <application>
+                    <member>ping</member>
+                    <member>ssh</member>
+                  </application>
+                  <service>
+                    <member>application-default</member>
+                  </service>
+                  <hip-profiles>
+                    <member>any</member>
+                  </hip-profiles>
+                  <action>allow</action>
+                  <negate-source>no</negate-source>
+                </entry>
+                <entry name="AllowWebAccess" uuid="9df5b37f-b15a-4112-9a2b-ad0b79ec0bb8">
+                  <profile-setting>
+                    <profiles>
+                      <virus>
+                        <member>default</member>
+                      </virus>
+                      <spyware>
+                        <member>default</member>
+                      </spyware>
+                      <vulnerability>
+                        <member>default</member>
+                      </vulnerability>
+                    </profiles>
+                  </profile-setting>
+                  <to>
+                    <member>trust</member>
+                  </to>
+                  <from>
+                    <member>untrust</member>
+                  </from>
+                  <source>
+                    <member>any</member>
+                  </source>
+                  <destination>
+                    <member>any</member>
+                  </destination>
+                  <source-user>
+                    <member>any</member>
+                  </source-user>
+                  <category>
+                    <member>any</member>
+                  </category>
+                  <application>
+                    <member>web-browsing</member>
+                  </application>
+                  <service>
+                    <member>application-default</member>
+                  </service>
+                  <hip-profiles>
+                    <member>any</member>
+                  </hip-profiles>
+                  <action>allow</action>
+                  <log-start>no</log-start>
+                  <log-end>yes</log-end>
+                </entry>
+                <entry name="webserver2External" uuid="ae4f3c9a-3507-41a8-a5ed-1d5000e2c4aa">
+                  <profile-setting>
+                    <profiles>
+                      <virus>
+                        <member>default</member>
+                      </virus>
+                      <spyware>
+                        <member>default</member>
+                      </spyware>
+                      <vulnerability>
+                        <member>default</member>
+                      </vulnerability>
+                    </profiles>
+                  </profile-setting>
+                  <to>
+                    <member>untrust</member>
+                  </to>
+                  <from>
+                    <member>trust</member>
+                  </from>
+                  <source>
+                    <member>10.0.1.88</member>
+                  </source>
+                  <destination>
+                    <member>any</member>
+                  </destination>
+                  <source-user>
+                    <member>any</member>
+                  </source-user>
+                  <category>
+                    <member>any</member>
+                  </category>
+                  <application>
+                    <member>any</member>
+                  </application>
+                  <service>
+                    <member>application-default</member>
+                  </service>
+                  <hip-profiles>
+                    <member>any</member>
+                  </hip-profiles>
+                  <action>allow</action>
+                </entry>
+              </rules>
+            </security>
+            <default-security-rules>
+              <rules>
+                <entry name="intrazone-default" uuid="b5ef5add-afd0-41e7-9bf2-1208b7e75426">
+                  <action>allow</action>
+                  <log-start>no</log-start>
+                  <log-end>yes</log-end>
+                </entry>
+                <entry name="interzone-default" uuid="391b21c6-077b-488b-b090-e2c89e462b84">
+                  <action>deny</action>
+                  <log-start>no</log-start>
+                  <log-end>yes</log-end>
+                </entry>
+              </rules>
+            </default-security-rules>
+          </rulebase>
+          <log-settings>
+            <profiles/>
+          </log-settings>
+          <import>
+            <network>
+              <interface>
+                <member>ethernet1/1</member>
+                <member>ethernet1/2</member>
+              </interface>
+            </network>
+          </import>
+        </entry>
+      </vsys>
+    </entry>
+  </devices>
+</config>
