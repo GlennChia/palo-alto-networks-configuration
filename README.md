@@ -37,3 +37,10 @@ This link shows a step by step guide: [Configure Syslog Monitoring](https://docs
 # 3. URL filtering
 
 Palo Alto provides a list of URLs that belong to each of the categories that are predefined. The link to these can be found at [Complete List of Pan-DB URL Filtering Categories](https://knowledgebase.paloaltonetworks.com/KCSArticleDetail?id=kA10g000000Cm5hCAC)
+
+# 4. File blocking
+
+When I tested, I could not block HTTPs downloads of .exe files. Hence for testing I used HTTP for now. This [link](https://live.paloaltonetworks.com/t5/threat-vulnerability-discussions/file-blocking-exe-vs-exe/td-p/184568) explains why
+
+Sample URL to test executable downloads: http://s3.amazonaws.com/session-manager-downloads/plugin/latest/windows/SessionManagerPluginSetup.exe
+

@@ -1672,6 +1672,9 @@ This App-ID covers desktop App and web traffic for JANDI.</description>
                       <url-filtering>
                         <member>custom-filters</member>
                       </url-filtering>
+                      <file-blocking>
+                        <member>strict file blocking</member>
+                      </file-blocking>
                     </profiles>
                   </profile-setting>
                   <to>
